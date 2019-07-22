@@ -5,6 +5,12 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
  
+
+stattracker.xcworkspace/
+stattracker.xcodeproj/
+stattracker.xcodeproj/project.pbxproj
+stattracker.xcodeproj/xcuserdata/
+ 
 ## Build generated
 build/
 DerivedData/
@@ -43,6 +49,8 @@ playground.xcworkspace
 .build/
  
 # CocoaPods - Refactored to standalone file
+Pods/
+Podfile.lock
  
 # Carthage - Refactored to standalone file
  
@@ -68,12 +76,13 @@ fastlane/test_output
 ## Various settings
  
 ## Other
- 
+GoogleService-Info.plist
+
 ### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
- 
+
 # End of https://www.gitignore.io/api/swift,xcode
