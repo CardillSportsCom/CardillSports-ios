@@ -86,10 +86,7 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
     }
     
     func fetchGameDays() {
-        
-        let playerId = UserDefaults.standard.string(forKey: "player_id")!
-        
-        cardillService.getLeagues(withPlayerId: playerId, completionHandler: {leagueResponse in
+        cardillService.getLeagues(completionHandler: { leagueResponse in
             self.leaguesDidLoad(leagueResponse: leagueResponse)
             self.cardillService.getGameDays(completionHandler: {gameDayResponse in
                 var loadedGameDays = [GameDay]()

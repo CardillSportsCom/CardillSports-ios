@@ -50,19 +50,8 @@ extension BoxScoreViewController {
         
         //1
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                      for: indexPath) as! BoxScoreViewCell
-        //2
-        let flickrPhoto = photo(for: indexPath)
-        cell.backgroundColor = .white
-        //3
-        cell.imageView.image = flickrPhoto.thumbnail
-        
-        return cell
-        
-        let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .black
-        // Configure the cell
+                                                      for: indexPath) as! BoxScoreCollectionViewCell
+      
         return cell
     }
 }

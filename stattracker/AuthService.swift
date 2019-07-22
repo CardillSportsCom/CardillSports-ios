@@ -12,9 +12,8 @@ import SwiftyJSON
 
 class AuthService: NSObject {
     
-    func authenticate(firebaseToken: String) {
+    func authenticate(firebaseToken: String, completionHandler: @escaping (String, String) -> Void) {
         let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as! String
-        print(url)
         
         let parameters: Parameters = [
             "token": firebaseToken,
@@ -25,14 +24,11 @@ class AuthService: NSObject {
             let playerId = json!["player"]["id"].stringValue
             let idToken = json!["id_token"].stringValue
             
-            let headers: HTTPHeaders = [
-                "Authorization": idToken,
-                "Accept": "application/json"
-            ]
+            let defaults = `UserDefaults`.standard
+            defaults.set(idToken, forKey: "id_token")
+            defaults.set(playerId, forKey: "player_id")
             
-            AF.request(url + "/player/leagues/" + playerId, headers: headers).responseJSON { (response) -> Void in
-                self.debugRequest(response: response)
-            }
+            completionHandler(idToken, playerId)
         }
 
         

@@ -10,15 +10,21 @@
 		0D43DEED22AA406314F99BDD /* Pods_stattrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837C59D61C9CA918AC524230 /* Pods_stattrackerUITests.framework */; };
 		7223237022E56D9B009C0881 /* CardillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223236F22E56D9B009C0881 /* CardillService.swift */; };
 		7223237222E56E83009C0881 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223237122E56E83009C0881 /* AuthService.swift */; };
+		7223D12C22E649DD00743AD1 /* BoxScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12422E649DC00743AD1 /* BoxScoreCollectionViewCell.swift */; };
+		7223D12D22E649DD00743AD1 /* GameDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12522E649DC00743AD1 /* GameDaysViewController.swift */; };
+		7223D12E22E649DD00743AD1 /* GameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12622E649DC00743AD1 /* GameDay.swift */; };
+		7223D12F22E649DD00743AD1 /* StickyGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12722E649DC00743AD1 /* StickyGridCollectionViewLayout.swift */; };
+		7223D13022E649DD00743AD1 /* GameDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12822E649DD00743AD1 /* GameDayTableViewCell.swift */; };
+		7223D13122E649DD00743AD1 /* BoxScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12922E649DD00743AD1 /* BoxScoreViewController.swift */; };
+		7223D13222E649DD00743AD1 /* FirebaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223D12A22E649DD00743AD1 /* FirebaseViewController.swift */; };
 		72685FF022E546300077B1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72685FEF22E546300077B1D4 /* AppDelegate.swift */; };
-		72685FF222E546300077B1D4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72685FF122E546300077B1D4 /* FirstViewController.swift */; };
 		72685FF422E546300077B1D4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72685FF322E546300077B1D4 /* SecondViewController.swift */; };
 		72685FF722E546300077B1D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72685FF522E546300077B1D4 /* Main.storyboard */; };
 		72685FF922E546320077B1D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72685FF822E546320077B1D4 /* Assets.xcassets */; };
 		72685FFC22E546320077B1D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72685FFA22E546320077B1D4 /* LaunchScreen.storyboard */; };
 		7268600722E546320077B1D4 /* stattrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268600622E546320077B1D4 /* stattrackerTests.swift */; };
 		7268601222E546320077B1D4 /* stattrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268601122E546320077B1D4 /* stattrackerUITests.swift */; };
-		7268602022E546CE0077B1D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7268601F22E546CE0077B1D4 /* GoogleService-Info.plist */; };
+		72A972C822E652D700816A4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72A972C722E652D700816A4F /* GoogleService-Info.plist */; };
 		9E3D30720D3B39DFB080E5EB /* Pods_stattrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2715353F9D7150C6FDA83742 /* Pods_stattrackerTests.framework */; };
 		A74618F2E1B076F3D7226451 /* Pods_stattracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2941CE44383019AF898AD3 /* Pods_stattracker.framework */; };
 /* End PBXBuildFile section */
@@ -48,9 +54,15 @@
 		6A01CE3C715E132750B9F175 /* Pods-stattracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stattracker.release.xcconfig"; path = "Target Support Files/Pods-stattracker/Pods-stattracker.release.xcconfig"; sourceTree = "<group>"; };
 		7223236F22E56D9B009C0881 /* CardillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardillService.swift; sourceTree = "<group>"; };
 		7223237122E56E83009C0881 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7223D12422E649DC00743AD1 /* BoxScoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxScoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		7223D12522E649DC00743AD1 /* GameDaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDaysViewController.swift; sourceTree = "<group>"; };
+		7223D12622E649DC00743AD1 /* GameDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDay.swift; sourceTree = "<group>"; };
+		7223D12722E649DC00743AD1 /* StickyGridCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyGridCollectionViewLayout.swift; sourceTree = "<group>"; };
+		7223D12822E649DD00743AD1 /* GameDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDayTableViewCell.swift; sourceTree = "<group>"; };
+		7223D12922E649DD00743AD1 /* BoxScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxScoreViewController.swift; sourceTree = "<group>"; };
+		7223D12A22E649DD00743AD1 /* FirebaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseViewController.swift; sourceTree = "<group>"; };
 		72685FEC22E546300077B1D4 /* stattracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stattracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72685FEF22E546300077B1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72685FF122E546300077B1D4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		72685FF322E546300077B1D4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		72685FF622E546300077B1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72685FF822E546320077B1D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +74,7 @@
 		7268600D22E546320077B1D4 /* stattrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stattrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7268601122E546320077B1D4 /* stattrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stattrackerUITests.swift; sourceTree = "<group>"; };
 		7268601322E546320077B1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7268601F22E546CE0077B1D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72A972C722E652D700816A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		837C59D61C9CA918AC524230 /* Pods_stattrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stattrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D56C412CBEC7E3C91145BB /* Pods-stattrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stattrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-stattrackerUITests/Pods-stattrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB602F0EFA37E1675EC28919 /* Pods-stattrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stattrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-stattrackerTests/Pods-stattrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,7 +122,7 @@
 		72685FE322E546300077B1D4 = {
 			isa = PBXGroup;
 			children = (
-				7268601F22E546CE0077B1D4 /* GoogleService-Info.plist */,
+				72A972C722E652D700816A4F /* GoogleService-Info.plist */,
 				72685FEE22E546300077B1D4 /* stattracker */,
 				7268600522E546320077B1D4 /* stattrackerTests */,
 				7268601022E546320077B1D4 /* stattrackerUITests */,
@@ -134,7 +146,13 @@
 			isa = PBXGroup;
 			children = (
 				72685FEF22E546300077B1D4 /* AppDelegate.swift */,
-				72685FF122E546300077B1D4 /* FirstViewController.swift */,
+				7223D12422E649DC00743AD1 /* BoxScoreCollectionViewCell.swift */,
+				7223D12922E649DD00743AD1 /* BoxScoreViewController.swift */,
+				7223D12A22E649DD00743AD1 /* FirebaseViewController.swift */,
+				7223D12622E649DC00743AD1 /* GameDay.swift */,
+				7223D12522E649DC00743AD1 /* GameDaysViewController.swift */,
+				7223D12822E649DD00743AD1 /* GameDayTableViewCell.swift */,
+				7223D12722E649DC00743AD1 /* StickyGridCollectionViewLayout.swift */,
 				72685FF322E546300077B1D4 /* SecondViewController.swift */,
 				72685FF522E546300077B1D4 /* Main.storyboard */,
 				72685FF822E546320077B1D4 /* Assets.xcassets */,
@@ -287,7 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72685FFC22E546320077B1D4 /* LaunchScreen.storyboard in Resources */,
-				7268602022E546CE0077B1D4 /* GoogleService-Info.plist in Resources */,
+				72A972C822E652D700816A4F /* GoogleService-Info.plist in Resources */,
 				72685FF922E546320077B1D4 /* Assets.xcassets in Resources */,
 				72685FF722E546300077B1D4 /* Main.storyboard in Resources */,
 			);
@@ -418,9 +436,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72685FF422E546300077B1D4 /* SecondViewController.swift in Sources */,
+				7223D13022E649DD00743AD1 /* GameDayTableViewCell.swift in Sources */,
+				7223D12F22E649DD00743AD1 /* StickyGridCollectionViewLayout.swift in Sources */,
+				7223D13222E649DD00743AD1 /* FirebaseViewController.swift in Sources */,
+				7223D12D22E649DD00743AD1 /* GameDaysViewController.swift in Sources */,
 				72685FF022E546300077B1D4 /* AppDelegate.swift in Sources */,
+				7223D12C22E649DD00743AD1 /* BoxScoreCollectionViewCell.swift in Sources */,
+				7223D13122E649DD00743AD1 /* BoxScoreViewController.swift in Sources */,
+				7223D12E22E649DD00743AD1 /* GameDay.swift in Sources */,
 				7223237222E56E83009C0881 /* AuthService.swift in Sources */,
-				72685FF222E546300077B1D4 /* FirstViewController.swift in Sources */,
 				7223237022E56D9B009C0881 /* CardillService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
