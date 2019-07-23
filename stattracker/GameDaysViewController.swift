@@ -23,9 +23,10 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
         
         if (firebaseViewController.getCurrentUser() != nil) {
             firebaseViewController.getTokenForCurrentUser(completionHandler: {firebaseToken in
-                self.authService.authenticate(firebaseToken: firebaseToken, completionHandler: {idToken, playerId  in
-                    UserDefaults.standard.set(idToken, forKey: "id_token")
-                    UserDefaults.standard.set(playerId, forKey: "player_id")
+                self.authService.authenticate(firebaseToken: firebaseToken, completionHandler: {authResponse  in
+                    
+                    UserDefaults.standard.set(authResponse.idToken, forKey: "id_token")
+                    UserDefaults.standard.set(authResponse.playerId, forKey: "player_id")
                     
                     self.fetchGameDays()
                 })
@@ -89,9 +90,10 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
         cardillService.getLeagues(completionHandler: { leagueResponse in
             self.leaguesDidLoad(leagueResponse: leagueResponse)
             self.cardillService.getGameDays(completionHandler: {gameDayResponse in
+                print(gameDayResponse)
                 var loadedGameDays = [GameDay]()
-                for gameDay in gameDayResponse["gameDays"].arrayValue {
-                    loadedGameDays.append(GameDay(withTitle: gameDay["gameDate"].stringValue))
+                for gameDay in gameDayResponse.gameDays {
+                    loadedGameDays.append(GameDay(withTitle: gameDay.gameDate))
                 }
                 self.gameDays = loadedGameDays
                 self.tableView.reloadData()

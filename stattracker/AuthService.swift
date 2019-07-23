@@ -14,7 +14,7 @@ class AuthService: NSObject {
     
     let decoder = JSONDecoder()
     
-    func authenticate(firebaseToken: String, completionHandler: @escaping (String, String) -> Void) {
+    func authenticate(firebaseToken: String, completionHandler: @escaping (AuthResponse) -> Void) {
         let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as! String
         
         let parameters: Parameters = [
@@ -23,12 +23,7 @@ class AuthService: NSObject {
         AF.request(url + "/auth", method: .post, parameters: parameters).responseData { (response) -> Void in
       
             let authResponse : AuthResponse = try! self.decoder.decode(AuthResponse.self, from: response.result.get())
-            
-            let defaults = `UserDefaults`.standard
-            defaults.set(authResponse.idToken, forKey: "id_token")
-            defaults.set(authResponse.playerId, forKey: "player_id")
-            
-            completionHandler(authResponse.idToken, authResponse.playerId)
+            completionHandler(authResponse)
         }
     }
     

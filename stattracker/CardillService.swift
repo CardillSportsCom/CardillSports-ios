@@ -32,7 +32,7 @@ class CardillService: NSObject {
         }
     }
     
-    func getGameDays(completionHandler: @escaping (JSON) -> Void) {
+    func getGameDays(completionHandler: @escaping (GameDaysResponse) -> Void) {
     
         let idToken = UserDefaults.standard.string(forKey: "id_token")!
         let headers: HTTPHeaders = [
@@ -43,9 +43,11 @@ class CardillService: NSObject {
         //let currentLeagueId = UserDefaults.standard.string(forKey: "current_league_id")!
         let currentLeagueId = "5bb15c65be2df207fc5a7221" //TODO stop hard coding this
         print("CURRENT LEAGUE ID: " + currentLeagueId)
-        AF.request(url + "/stat/score/" + currentLeagueId, headers: headers).responseJSON {
+        AF.request(url + "/stat/score/" + currentLeagueId, headers: headers).responseData {
             (response) -> Void in
-            completionHandler(try! JSON(response.result.get()))
+            print(try! JSON(response.result.get()))
+            let gameDaysResponse : GameDaysResponse = try! self.decoder.decode(GameDaysResponse.self, from: response.result.get())
+            completionHandler(gameDaysResponse)
         }
     }
 }
