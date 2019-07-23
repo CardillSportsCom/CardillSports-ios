@@ -12,8 +12,11 @@ import SwiftyJSON
 
 class CardillService: NSObject {
     
-    func getLeagues( completionHandler: @escaping (JSON) -> Void) {
+    func getLeagues( completionHandler: @escaping (LeagueResponse) -> Void) {
         let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as! String
+        
+        let decoder = JSONDecoder()
+        
         
         let idToken = UserDefaults.standard.string(forKey: "id_token")!
         let playerId = UserDefaults.standard.string(forKey: "player_id")!
@@ -23,9 +26,12 @@ class CardillService: NSObject {
             "Accept": "application/json"
         ]
         
-        AF.request(url + "/player/leagues/" + playerId, headers: headers).responseJSON {
+        AF.request(url + "/player/leagues/" + playerId, headers: headers).responseData {
             (response) -> Void in
-            completionHandler(try! JSON(response.result.get()))
+            let x = try! JSON(response.result.get())
+            print(x)
+            let leagueResponse : LeagueResponse = try! decoder.decode(LeagueResponse.self, from: response.result.get())
+            completionHandler(leagueResponse)
         }
     }
     

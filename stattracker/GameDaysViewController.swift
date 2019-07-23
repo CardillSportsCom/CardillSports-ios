@@ -100,8 +100,8 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
     }
     
   
-    func leaguesDidLoad(leagueResponse: JSON) {
-        let leagueID = leagueResponse["leagues"][0]["_id"].stringValue
+    func leaguesDidLoad(leagueResponse: LeagueResponse) {
+        let leagueID = leagueResponse.leagues[0].id
         UserDefaults.standard.set(leagueID, forKey: "current_league_id")
     }
 
