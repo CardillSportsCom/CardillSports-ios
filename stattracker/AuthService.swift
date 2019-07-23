@@ -12,27 +12,24 @@ import SwiftyJSON
 
 class AuthService: NSObject {
     
+    let decoder = JSONDecoder()
+    
     func authenticate(firebaseToken: String, completionHandler: @escaping (String, String) -> Void) {
         let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as! String
         
         let parameters: Parameters = [
             "token": firebaseToken,
         ]
-        AF.request(url + "/auth", method: .post, parameters: parameters).responseJSON { (response) -> Void in
+        AF.request(url + "/auth", method: .post, parameters: parameters).responseData { (response) -> Void in
       
-            let json = try? JSON(response.result.get())
-            let playerId = json!["player"]["id"].stringValue
-            let idToken = json!["id_token"].stringValue
+            let authResponse : AuthResponse = try! self.decoder.decode(AuthResponse.self, from: response.result.get())
             
             let defaults = `UserDefaults`.standard
-            defaults.set(idToken, forKey: "id_token")
-            defaults.set(playerId, forKey: "player_id")
+            defaults.set(authResponse.idToken, forKey: "id_token")
+            defaults.set(authResponse.playerId, forKey: "player_id")
             
-            completionHandler(idToken, playerId)
+            completionHandler(authResponse.idToken, authResponse.playerId)
         }
-
-        
-        
     }
     
     func debugRequest(response: DataResponse<Any>) {

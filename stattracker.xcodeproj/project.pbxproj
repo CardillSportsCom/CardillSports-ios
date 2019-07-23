@@ -27,6 +27,7 @@
 		72A972C822E652D700816A4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72A972C722E652D700816A4F /* GoogleService-Info.plist */; };
 		72A972DC22E770BC00816A4F /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A972DB22E770BC00816A4F /* League.swift */; };
 		72A972DE22E7712100816A4F /* LeagueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A972DD22E7712100816A4F /* LeagueResponse.swift */; };
+		72A972E022E776AE00816A4F /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A972DF22E776AE00816A4F /* AuthResponse.swift */; };
 		9E3D30720D3B39DFB080E5EB /* Pods_stattrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2715353F9D7150C6FDA83742 /* Pods_stattrackerTests.framework */; };
 		A74618F2E1B076F3D7226451 /* Pods_stattracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2941CE44383019AF898AD3 /* Pods_stattracker.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		72A972C722E652D700816A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72A972DB22E770BC00816A4F /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		72A972DD22E7712100816A4F /* LeagueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueResponse.swift; sourceTree = "<group>"; };
+		72A972DF22E776AE00816A4F /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		837C59D61C9CA918AC524230 /* Pods_stattrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stattrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D56C412CBEC7E3C91145BB /* Pods-stattrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stattrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-stattrackerUITests/Pods-stattrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB602F0EFA37E1675EC28919 /* Pods-stattrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stattrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-stattrackerTests/Pods-stattrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				72685FFD22E546320077B1D4 /* Info.plist */,
 				7223236F22E56D9B009C0881 /* CardillService.swift */,
 				7223237122E56E83009C0881 /* AuthService.swift */,
+				72A972DF22E776AE00816A4F /* AuthResponse.swift */,
 				72A972DB22E770BC00816A4F /* League.swift */,
 				72A972DD22E7712100816A4F /* LeagueResponse.swift */,
 			);
@@ -445,6 +448,7 @@
 				7223D13022E649DD00743AD1 /* GameDayTableViewCell.swift in Sources */,
 				7223D12F22E649DD00743AD1 /* StickyGridCollectionViewLayout.swift in Sources */,
 				7223D13222E649DD00743AD1 /* FirebaseViewController.swift in Sources */,
+				72A972E022E776AE00816A4F /* AuthResponse.swift in Sources */,
 				7223D12D22E649DD00743AD1 /* GameDaysViewController.swift in Sources */,
 				72685FF022E546300077B1D4 /* AppDelegate.swift in Sources */,
 				7223D12C22E649DD00743AD1 /* BoxScoreCollectionViewCell.swift in Sources */,
