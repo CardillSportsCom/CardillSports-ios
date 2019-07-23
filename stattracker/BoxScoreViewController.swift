@@ -52,6 +52,7 @@ extension BoxScoreViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! BoxScoreCollectionViewCell
       
+        cell.title.text = "VITHS"
         return cell
     }
 }

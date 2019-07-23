@@ -11,4 +11,6 @@ import UIKit
 
 class BoxScoreCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var title: UILabel!
+    
 }
