@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class GameDaysViewController: UITableViewController, FUIAuthDelegate {
 
-    var gameDays = [GameDay]()
+    var gameDays = [GameDayResponse]()
     var firebaseViewController = FirebaseViewController();
     var cardillService = CardillService()
     var authService = AuthService()
@@ -48,7 +48,7 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
             // indexPath is set to the path that was tapped
             let indexPath = self.tableView.indexPathForSelectedRow
             // titleString is set to the title at the row in the objects array.
-            let titleString = self.gameDays[indexPath!.row].title
+            let titleString = self.gameDays[indexPath!.row].gameDate
             // the titleStringViaSegue property of NewViewController is set.
             upcoming.titleStringViaSegue = titleString
             upcoming.boxScoreViaSegue = self.gameDays[indexPath!.row]
@@ -76,7 +76,7 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
         // Fetches the appropriate meal for the data source layout.
         let gameDay = gameDays[indexPath.row]
         
-        cell.textLabel?.text = gameDay.title;
+        cell.textLabel?.text = gameDay.gameDate
         
         return cell
     }
@@ -90,12 +90,7 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
         cardillService.getLeagues(completionHandler: { leagueResponse in
             self.leaguesDidLoad(leagueResponse: leagueResponse)
             self.cardillService.getGameDays(completionHandler: {gameDayResponse in
-                print(gameDayResponse)
-                var loadedGameDays = [GameDay]()
-                for gameDay in gameDayResponse.gameDays {
-                    loadedGameDays.append(GameDay(withTitle: gameDay.gameDate))
-                }
-                self.gameDays = loadedGameDays
+                self.gameDays = gameDayResponse.gameDays
                 self.tableView.reloadData()
             })
         })

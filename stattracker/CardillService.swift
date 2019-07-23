@@ -42,10 +42,9 @@ class CardillService: NSObject {
         
         //let currentLeagueId = UserDefaults.standard.string(forKey: "current_league_id")!
         let currentLeagueId = "5bb15c65be2df207fc5a7221" //TODO stop hard coding this
-        print("CURRENT LEAGUE ID: " + currentLeagueId)
+        
         AF.request(url + "/stat/score/" + currentLeagueId, headers: headers).responseData {
             (response) -> Void in
-            print(try! JSON(response.result.get()))
             let gameDaysResponse : GameDaysResponse = try! self.decoder.decode(GameDaysResponse.self, from: response.result.get())
             completionHandler(gameDaysResponse)
         }

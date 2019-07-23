@@ -19,12 +19,10 @@ class BoxScoreViewController: UICollectionViewController {
                                              right: 20.0)
     
     var titleStringViaSegue: String!
-    var boxScoreViaSegue: GameDay?
+    var boxScoreViaSegue: GameDayResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(titleStringViaSegue)
-        print(boxScoreViaSegue?.title)
     }
     
 }
