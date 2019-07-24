@@ -61,10 +61,10 @@ extension BoxScoreViewController {
       
         if (indexPath.section == 0) {
             cell.title.text = getColumnHeaderTitle(withColumnIndex: indexPath.row)
-            cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+            cell.backgroundColor = UIColor(named: "Primary")!
         } else {
             if (indexPath.row == 0) {
-                cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+                cell.backgroundColor = UIColor(named: "Primary")!
             } else {
                 cell.backgroundColor = .white
             }

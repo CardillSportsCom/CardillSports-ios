@@ -11,4 +11,5 @@ import UIKit
 
 class GameDayTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var title: UILabel!
 }

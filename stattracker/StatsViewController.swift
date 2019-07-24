@@ -76,13 +76,13 @@ extension StatsViewController {
         if (indexPath.section == 0) {
             cell.title.text = getColumnHeaderTitle(withColumnIndex: indexPath.row)
             cell.title.textColor = .black
-            cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
-            cell.title.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+            cell.backgroundColor = UIColor(named: "Primary")!
+            cell.title.backgroundColor = UIColor(named: "Primary")!
         } else {
 
             if (indexPath.row == 0) {
-                cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
-                cell.title.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+                cell.backgroundColor = UIColor(named: "Primary")!
+                cell.title.backgroundColor = UIColor(named: "Primary")!
                 cell.title.textColor = .black
             } else {
                 cell.backgroundColor = .white

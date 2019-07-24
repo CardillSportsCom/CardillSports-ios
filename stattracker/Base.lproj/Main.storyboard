@@ -24,7 +24,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ym-I4-0zW" id="VWX-IQ-Umi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-3b-lWc">
+                                            <rect key="frame" x="0.0" y="-1" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="title" destination="DOF-3b-lWc" id="Mo6-oe-I8b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,11 +120,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--Scores-->
         <scene sceneID="x54-l4-vP7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c1W-aM-GY2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xtz-cf-0yR"/>
+                    <tabBarItem key="tabBarItem" title="Scores" id="xtz-cf-0yR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zi8-TQ-ZOe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -177,11 +189,11 @@
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="369.64285714285711"/>
         </scene>
-        <!--Item-->
+        <!--Stats-->
         <scene sceneID="r6T-1w-AkI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YZH-pu-fTW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hRm-zH-XFw"/>
+                    <tabBarItem key="tabBarItem" title="Stats" id="hRm-zH-XFw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RCu-Dn-JzF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -70,14 +70,15 @@ class GameDaysViewController: UITableViewController, FUIAuthDelegate {
         let cellIdentifier = "GameDayTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GameDayTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of GameDayTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
         let gameDay = gameDays[indexPath.row]
         
-        cell.textLabel?.text = gameDay.gameDate
-        
+        cell.title.text = gameDay.gameDate
+        cell.title.textColor = UIColor(named: "PrimaryDark")!
+        cell.title.backgroundColor = .white
         return cell
     }
     
