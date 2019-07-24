@@ -13,17 +13,24 @@ import SwiftyJSON
 class StatsViewController: UICollectionViewController {
     
     private let reuseIdentifier = "BoxScoreCell"
-    private let itemsPerRow: CGFloat = 3
-    private let sectionInsets = UIEdgeInsets(top: 50.0,
-                                             left: 20.0,
-                                             bottom: 50.0,
-                                             right: 20.0)
+    private let itemsPerRow: CGFloat = 5
+    private let sectionInsets = UIEdgeInsets(top: 0.0,
+                                             left: 0.0,
+                                             bottom: 0.0,
+                                             right: 0.0)
     
     let cardillService = CardillService()
     
     var titleStringViaSegue: String!
     var boxScoreViaSegue: GameDayResponse?
     var stats: StatsResponse?
+    
+    @IBOutlet weak var gridLayout: StickyGridCollectionViewLayout! {
+        didSet {
+            gridLayout.stickyRowsCount = 0
+            gridLayout.stickyColumnsCount = 1
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +53,7 @@ extension StatsViewController {
     
     //1
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return stats != nil ? stats!.playerStatsResponses.count : 1
     }
     
     //2
@@ -65,14 +72,26 @@ extension StatsViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! BoxScoreCollectionViewCell
         
+  
         if (indexPath.section == 0) {
             cell.title.text = getColumnHeaderTitle(withColumnIndex: indexPath.row)
+            cell.title.textColor = .black
+            cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+            cell.title.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
         } else {
 
+            if (indexPath.row == 0) {
+                cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+                cell.title.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+                cell.title.textColor = .black
+            } else {
+                cell.backgroundColor = .white
+                cell.title.backgroundColor = .white
+            }
             if (stats != nil) {
                 cell.title.text = getStatText(withStats: stats!, andRowIndex: indexPath.section, andColumnIndex: indexPath.row)
             } else {
-                cell.title.text = "STAT"
+                cell.title.text = ""
             }
         }
         

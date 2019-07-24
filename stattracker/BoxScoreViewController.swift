@@ -12,14 +12,22 @@ import UIKit
 class BoxScoreViewController: UICollectionViewController {
     
     private let reuseIdentifier = "BoxScoreCell"
-    private let itemsPerRow: CGFloat = 3
-    private let sectionInsets = UIEdgeInsets(top: 50.0,
-                                             left: 20.0,
-                                             bottom: 50.0,
-                                             right: 20.0)
+    private let itemsPerRow: CGFloat = 5
+    private let sectionInsets = UIEdgeInsets(top: 0.0,
+                                             left: 0.0,
+                                             bottom: 0.0,
+                                             right: 0.0)
     
     var titleStringViaSegue: String!
     var boxScoreViaSegue: GameDayResponse?
+    
+    
+    @IBOutlet weak var gridLayout: StickyGridCollectionViewLayout! {
+        didSet {
+            gridLayout.stickyRowsCount = 0
+            gridLayout.stickyColumnsCount = 1
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +61,13 @@ extension BoxScoreViewController {
       
         if (indexPath.section == 0) {
             cell.title.text = getColumnHeaderTitle(withColumnIndex: indexPath.row)
+            cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
         } else {
+            if (indexPath.row == 0) {
+                cell.backgroundColor = .init(red: 0.82, green: 0.82, blue: 0.5, alpha: 1.0)
+            } else {
+                cell.backgroundColor = .white
+            }
             cell.title.text = try! getStatText(withPlayerStats: boxScoreViaSegue!.playerStats[indexPath.section], andColumnIndex: indexPath.row)
         }
         
