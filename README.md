@@ -1,6 +1,6 @@
 # CardillSports-ios
 
-## Concepts Learned
+### Concepts Learned
 - Swift
 - Using Firebase for authentication
 - Using Alamofire for networking
@@ -9,3 +9,5 @@
 - Using a UICollectionView to show player stat grids
 - Using UserDefaults for saving user data to the phone
 
+### Screenshot
+![Screenshot](https://github.com/CardillSportsCom/CardillSports-ios/raw/master/screenshot.png)
