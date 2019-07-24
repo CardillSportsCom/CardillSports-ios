@@ -29,9 +29,10 @@ class BoxScoreViewController: UICollectionViewController {
 
 // MARK: - UICollectionViewDataSource
 extension BoxScoreViewController {
+    
     //1
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return boxScoreViaSegue!.playerStats.count
     }
     
     //2
@@ -50,8 +51,45 @@ extension BoxScoreViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! BoxScoreCollectionViewCell
       
-        cell.title.text = "VITHS"
+        if (indexPath.section == 0) {
+            cell.title.text = getColumnHeaderTitle(withColumnIndex: indexPath.row)
+        } else {
+            cell.title.text = try! getStatText(withPlayerStats: boxScoreViaSegue!.playerStats[indexPath.section], andColumnIndex: indexPath.row)
+        }
+        
         return cell
+    }
+    
+    func getColumnHeaderTitle(withColumnIndex index: Int) -> String {
+        var columnHeaders = ["Name", "Games", "Wins", "FGM", "FGA", "Rebounds", "Assists", "Steals", "Blocks", "Turnover"]
+        return columnHeaders[index]
+    }
+    
+    func getStatText(withPlayerStats playerStats: PlayerTotalStatsForGameDay, andColumnIndex index: Int) throws -> String  {
+        switch index {
+        case 0:
+            return playerStats.firstName
+        case 1:
+            return String(playerStats.gamesPlayed)
+        case 2:
+            return String(playerStats.gamesWon)
+        case 3:
+            return String(playerStats.fieldGoalsMade)
+        case 4:
+            return String(playerStats.fieldGoalsAttempted)
+        case 5:
+            return String(playerStats.rebounds)
+        case 6:
+            return String(playerStats.assists)
+        case 7:
+            return String(playerStats.steals)
+        case 8:
+            return String(playerStats.blocks)
+        case 9:
+            return String(playerStats.turnovers)
+        default:
+            throw "Invalid Stat Type"
+        }
     }
 }
 
