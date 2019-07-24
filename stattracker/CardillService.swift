@@ -15,7 +15,27 @@ class CardillService: NSObject {
     let decoder = JSONDecoder()
     let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as! String
     
-    func getLeagues( completionHandler: @escaping (LeagueResponse) -> Void) {
+    func getStats(completionHandler: @escaping (StatsResponse) -> Void) {
+        
+        //let currentLeagueId = UserDefaults.standard.string(forKey: "current_league_id")!
+        let currentLeagueId = "5bb15c65be2df207fc5a7221" //TODO stop hard coding this
+        
+        let idToken = UserDefaults.standard.string(forKey: "id_token")!
+        
+        let headers: HTTPHeaders = [
+            "Authorization": idToken,
+            "Accept": "application/json"
+        ]
+        AF.request(url + "/stat/league/" + currentLeagueId, headers: headers).responseData {
+            (response) -> Void in
+            
+            print(try! JSON(response.result.get()))
+            let statsResponse : StatsResponse = try! self.decoder.decode(StatsResponse.self, from: response.result.get())
+            completionHandler(statsResponse)
+        }
+    }
+    
+    func getLeagues(completionHandler: @escaping (LeagueResponse) -> Void) {
         let idToken = UserDefaults.standard.string(forKey: "id_token")!
         let playerId = UserDefaults.standard.string(forKey: "player_id")!
         

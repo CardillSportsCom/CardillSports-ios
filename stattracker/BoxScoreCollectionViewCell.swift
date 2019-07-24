@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class BoxScoreCollectionViewCell: UICollectionViewCell {
-    
+    //TODO rename this to generic cardill collection view cell
     @IBOutlet weak var title: UILabel!
     
 }

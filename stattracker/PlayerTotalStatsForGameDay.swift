@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO rename to player total stats
 struct PlayerTotalStatsForGameDay {
     
     let id: String
