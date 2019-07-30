@@ -1,4 +1,4 @@
-# StatTracker-ios
+# StatTracker-iOS
 
 ### Concepts Learned
 - Swift
